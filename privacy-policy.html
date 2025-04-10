@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy - Yuk App</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #bb86fc;
+    }
+    a {
+      color: #03dac6;
+    }
+    select {
+      background-color: #1f1f1f;
+      color: #ffffff;
+      padding: 0.4rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #444;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <label for="langSelect">🌐 Language / Язык / Til: </label>
+  <select id="langSelect">
+    <option value="en">English</option>
+    <option value="ru">Русский</option>
+    <option value="uz">O‘zbekcha</option>
+  </select>
+
+  <div id="policyContent"></div>
+
+  <script>
+    const policies = {
+      en: `
+        <h1>Privacy Policy</h1>
+        <p>Last updated: April 10, 2025</p>
+        <p>This privacy policy explains how the Yuk app collects, uses, and protects your information.</p>
+        <h2>1. Information We Collect</h2>
+        <ul><li>Your phone number</li><li>Your full name</li></ul>
+        <h2>2. How We Use Your Information</h2>
+        <p>We use your information solely to register your business account and allow access to your business-related data inside the app.</p>
+        <h2>3. Data Storage</h2>
+        <p>Your information is securely stored in Google Firestore. Each user is identified by a unique ID, and data is only accessible to the authenticated user.</p>
+        <h2>4. No Sensitive or Personal Content</h2>
+        <p>Yuk app does not allow uploading of personal images, sensitive information, or any private files. Only text-based data related to your business (such as orders, employees, and notes) is saved.</p>
+        <h2>5. Sharing of Information</h2>
+        <p>We do not share your information with third parties. Your data remains private and is used only within the Yuk app.</p>
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, you can contact us at: <a href="mailto:duocoders.namit@gmail.com">duocoders.namit@gmail.com</a></p>
+      `,
+      ru: `
+        <h1>Политика конфиденциальности</h1>
+        <p>Последнее обновление: 10 апреля 2025 г.</p>
+        <p>Эта политика объясняет, как приложение Yuk собирает, использует и защищает вашу информацию.</p>
+        <h2>1. Какие данные мы собираем</h2>
+        <ul><li>Ваш номер телефона</li><li>Ваше полное имя</li></ul>
+        <h2>2. Как мы используем вашу информацию</h2>
+        <p>Мы используем ваши данные только для регистрации бизнес-аккаунта и доступа к информации, связанной с вашим бизнесом в приложении.</p>
+        <h2>3. Хранение данных</h2>
+        <p>Ваши данные безопасно хранятся в Google Firestore. Каждый пользователь идентифицируется по уникальному идентификатору, и доступ к данным есть только у него.</p>
+        <h2>4. Отсутствие конфиденциального контента</h2>
+        <p>Приложение Yuk не позволяет загружать изображения, личные или конфиденциальные файлы. Только текстовые данные, относящиеся к бизнесу (например, заказы, сотрудники, заметки).</p>
+        <h2>5. Распространение информации</h2>
+        <p>Мы не передаём вашу информацию третьим лицам. Данные используются только внутри приложения Yuk.</p>
+        <h2>6. Контакты</h2>
+        <p>Если у вас есть вопросы по политике, напишите нам: <a href="mailto:duocoders.namit@gmail.com">duocoders.namit@gmail.com</a></p>
+      `,
+      uz: `
+        <h1>Maxfiylik siyosati</h1>
+        <p>Oxirgi yangilanish: 2025-yil 10-aprel</p>
+        <p>Ushbu siyosat Yuk ilovasi sizning ma’lumotlaringizni qanday yig‘ishi, foydalanishi va himoya qilishi haqida tushuntiradi.</p>
+        <h2>1. Qanday ma’lumotlarni yig‘amiz</h2>
+        <ul><li>Telefon raqamingiz</li><li>To‘liq ismingiz</li></ul>
+        <h2>2. Ma’lumotlardan foydalanish</h2>
+        <p>Ma’lumotlaringizdan faqat biznes hisobingizni ro‘yxatdan o‘tkazish va unga kirishni ta’minlash uchun foydalanamiz.</p>
+        <h2>3. Ma’lumotlarni saqlash</h2>
+        <p>Ma’lumotlaringiz Google Firestore bazasida xavfsiz saqlanadi. Har bir foydalanuvchi noyob ID orqali aniqlanadi, va faqat o‘sha foydalanuvchiga kirish mumkin.</p>
+        <h2>4. Shaxsiy fayllar yo‘q</h2>
+        <p>Yuk ilovasi shaxsiy rasm, maxfiy yoki boshqa fayllarni yuklashga ruxsat bermaydi. Faqat biznesga oid matn ma’lumotlari (buyurtmalar, xodimlar, eslatmalar) saqlanadi.</p>
+        <h2>5. Ma’lumotlar ulashilmaydi</h2>
+        <p>Ma’lumotlaringiz uchinchi shaxslarga berilmaydi. Ular faqat Yuk ilovasi ichida ishlatiladi.</p>
+        <h2>6. Bog‘lanish</h2>
+        <p>Agar savollaringiz bo‘lsa, bizga yozing: <a href="mailto:duocoders.namit@gmail.com">duocoders.namit@gmail.com</a></p>
+      `
+    };
+
+    const langSelect = document.getElementById("langSelect");
+    const content = document.getElementById("policyContent");
+
+    function updatePolicy() {
+      const selectedLang = langSelect.value;
+      content.innerHTML = policies[selectedLang];
+    }
+
+    langSelect.addEventListener("change", updatePolicy);
+    updatePolicy(); // Load default (English)
+  </script>
+</body>
+</html>
