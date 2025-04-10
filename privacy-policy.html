@@ -17,99 +17,86 @@
     h1 {
       text-align: center;
       color: #ffffff;
+      margin-bottom: 2rem;
     }
 
-    .lang-buttons {
-      text-align: center;
-      margin-bottom: 1.5rem;
+    h2 {
+      color: #e0e0e0;
+      margin-top: 2rem;
     }
 
-    .lang-buttons button {
-      background-color: #1f1f1f;
-      color: #f1f1f1;
-      border: 1px solid #555;
-      padding: 0.5rem 1rem;
-      margin: 0 0.3rem;
-      border-radius: 5px;
-      cursor: pointer;
+    p, li {
+      font-size: 1rem;
     }
 
-    .lang-buttons button:hover {
-      background-color: #333;
+    ul {
+      padding-left: 1.5rem;
     }
 
-    .content {
+    a {
+      color: #90caf9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
       max-width: 800px;
       margin: auto;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 2rem;
     }
   </style>
 </head>
 <body>
-
   <h1>Privacy Policy - Yuk</h1>
 
-  <div class="lang-buttons">
-    <button onclick="switchLang('en')">English</button>
-    <button onclick="switchLang('ru')">Русский</button>
-    <button onclick="switchLang('uz')">Oʻzbek</button>
+  <div class="section">
+    <h2>English</h2>
+    <p>This app is developed for a local business and is used by a small number of users (approximately 300).</p>
+    <p>We only collect the following information during registration:</p>
+    <ul>
+      <li>Phone number</li>
+      <li>Name</li>
+    </ul>
+    <p>This data is securely stored in Google Firestore and linked with a unique user ID.</p>
+    <p>No other personal information (photos, location, contacts, etc.) is collected or uploaded by the user.</p>
+    <p>All other app data is business-related (e.g., orders, employees) and entered manually by the user.</p>
+    <p>This data is never shared with third parties.</p>
+    <p>If you would like to delete your account or data, please contact us at: <a href="mailto:yukapp@gmail.com">yukapp@gmail.com</a></p>
   </div>
 
-  <div class="content" id="policy-content">
-    <!-- Content will be injected by JavaScript -->
+  <div class="section">
+    <h2>Русский</h2>
+    <p>Это приложение разработано для местного бизнеса и используется ограниченным числом пользователей (примерно 300).</p>
+    <p>Мы собираем только следующую информацию при регистрации:</p>
+    <ul>
+      <li>Номер телефона</li>
+      <li>Имя</li>
+    </ul>
+    <p>Эти данные безопасно хранятся в Google Firestore и связаны с уникальным ID пользователя.</p>
+    <p>Никакая другая личная информация (фото, местоположение, контакты и т.д.) не собирается и не загружается.</p>
+    <p>Все остальные данные приложения связаны с бизнесом (например, заказы, сотрудники) и вводятся пользователем вручную.</p>
+    <p>Эти данные никогда не передаются третьим лицам.</p>
+    <p>Если вы хотите удалить свою учетную запись или данные, свяжитесь с нами по адресу: <a href="mailto:yukapp@gmail.com">yukapp@gmail.com</a></p>
   </div>
 
-  <script>
-    const policies = {
-      en: `
-        <h2>Privacy Policy</h2>
-        <p>This app is developed for a local business and is used by a small number of users (approximately 300).</p>
-        <p>We only collect the following information during registration:</p>
-        <ul>
-          <li>Phone number</li>
-          <li>Name</li>
-        </ul>
-        <p>This data is securely stored in Google Firestore and linked with a unique user ID.</p>
-        <p>No other personal information (photos, location, contacts, etc.) is collected or uploaded by the user.</p>
-        <p>All other app data is business-related (e.g., orders, employees) and entered manually by the user.</p>
-        <p>This data is never shared with third parties.</p>
-        <p>If you would like to delete your account or data, please contact us at: <a href="mailto:yukapp@gmail.com">yukapp@gmail.com</a></p>
-      `,
-      ru: `
-        <h2>Политика конфиденциальности</h2>
-        <p>Это приложение разработано для местного бизнеса и используется ограниченным числом пользователей (примерно 300).</p>
-        <p>Мы собираем только следующую информацию при регистрации:</p>
-        <ul>
-          <li>Номер телефона</li>
-          <li>Имя</li>
-        </ul>
-        <p>Эти данные безопасно хранятся в Google Firestore и связаны с уникальным ID пользователя.</p>
-        <p>Никакая другая личная информация (фото, местоположение, контакты и т.д.) не собирается и не загружается.</p>
-        <p>Все остальные данные приложения связаны с бизнесом (например, заказы, сотрудники) и вводятся пользователем вручную.</p>
-        <p>Эти данные никогда не передаются третьим лицам.</p>
-        <p>Если вы хотите удалить свою учетную запись или данные, свяжитесь с нами по адресу: <a href="mailto:yukapp@gmail.com">yukapp@gmail.com</a></p>
-      `,
-      uz: `
-        <h2>Maxfiylik siyosati</h2>
-        <p>Ushbu ilova mahalliy biznes uchun ishlab chiqilgan va cheklangan foydalanuvchilar (taxminan 300) tomonidan foydalaniladi.</p>
-        <p>Ro'yxatdan o'tishda faqat quyidagi ma'lumotlarni to'playmiz:</p>
-        <ul>
-          <li>Telefon raqami</li>
-          <li>Ism</li>
-        </ul>
-        <p>Bu ma'lumotlar Google Firestore-da xavfsiz saqlanadi va noyob foydalanuvchi identifikatori bilan bog'lanadi.</p>
-        <p>Hech qanday boshqa shaxsiy ma'lumotlar (fotosuratlar, joylashuv, kontaktlar va hokazo) to'planmaydi yoki yuklanmaydi.</p>
-        <p>Ilovadagi barcha boshqa ma'lumotlar biznesga tegishli (masalan, buyurtmalar, xodimlar) va foydalanuvchi tomonidan qo'lda kiritiladi.</p>
-        <p>Ushbu ma'lumotlar hech qachon uchinchi shaxslarga uzatilmaydi.</p>
-        <p>Akkountingizni yoki ma'lumotlaringizni o'chirishni xohlasangiz, biz bilan quyidagi manzilda bog'laning: <a href="mailto:yukapp@gmail.com">yukapp@gmail.com</a></p>
-      `
-    };
-
-    function switchLang(lang) {
-      document.getElementById('policy-content').innerHTML = policies[lang];
-    }
-
-    // Show English by default
-    switchLang('en');
-  </script>
+  <div class="section">
+    <h2>Oʻzbek</h2>
+    <p>Ushbu ilova mahalliy biznes uchun ishlab chiqilgan va cheklangan foydalanuvchilar (taxminan 300) tomonidan foydalaniladi.</p>
+    <p>Ro'yxatdan o'tishda faqat quyidagi ma'lumotlarni to'playmiz:</p>
+    <ul>
+      <li>Telefon raqami</li>
+      <li>Ism</li>
+    </ul>
+    <p>Bu ma'lumotlar Google Firestore-da xavfsiz saqlanadi va noyob foydalanuvchi identifikatori bilan bog'lanadi.</p>
+    <p>Hech qanday boshqa shaxsiy ma'lumotlar (fotosuratlar, joylashuv, kontaktlar va hokazo) to'planmaydi yoki yuklanmaydi.</p>
+    <p>Ilovadagi barcha boshqa ma'lumotlar biznesga tegishli (masalan, buyurtmalar, xodimlar) va foydalanuvchi tomonidan qo'lda kiritiladi.</p>
+    <p>Ushbu ma'lumotlar hech qachon uchinchi shaxslarga uzatilmaydi.</p>
+    <p>Akkountingizni yoki ma'lumotlaringizni o'chirishni xohlasangiz, biz bilan quyidagi manzilda bog'laning: <a href="mailto:yukapp@gmail.com">yukapp@gmail.com</a></p>
+  </div>
 </body>
 </html>
